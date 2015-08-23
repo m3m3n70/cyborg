@@ -1,0 +1,2 @@
+module.exports =
+  wit: 'N2GLRKXEZ4QDTSEY4ANDXFQP7TVW6YSR'
