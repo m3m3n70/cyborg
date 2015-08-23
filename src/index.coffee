@@ -8,4 +8,4 @@ module.exports = (opts, cb) ->
   wit.captureTextIntent config.wit, opts.string, (err, data) ->
     return cb err if err?
     selectModule data, (err, output) ->
-      cb null, output
+      cb err, output
