@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "dependencies": {
     "coffee-script": "^1.9.3",
-    "node-wit": "^2.0.0"
+    "node-wit": "^2.0.0",
+    "require-dir": "^0.3.0"
   }
 }
