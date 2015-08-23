@@ -15,4 +15,4 @@ module.exports = (data, cb) ->
   return cb ('confidence too low') unless confidence > 0.5
   return cb ('invalid module') unless typeof modules[intent].index is 'function'
   modules[intent].index data, (err, response) ->
-    cb(null, data)
+    cb(null, response)
