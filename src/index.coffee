@@ -1,5 +1,6 @@
 wit = require 'node-wit'
 config = require '../config'
+app = require './http'
 selectModule = require './selectModule'
 
 module.exports = (opts, cb) ->
