@@ -11,9 +11,11 @@ module.exports = (data, cb) ->
   console.log 'confidence: ' + confidence
 
   modules = redir '../modules', recurse: true
-  #console.log modules
 
-  return cb null, 'low confidence' unless confidence > 0.5
+  return cb null, 'sorry, I cannot answer that because im only ' + confidence*100 + '% confident im right :|' unless confidence > 0.5
   return cb null, 'invalid module' unless typeof modules[intent].index is 'function'
+
+  console.log data.outcomes[0].entities
+
   modules[intent].index data, (err, response) ->
       cb(null, response)

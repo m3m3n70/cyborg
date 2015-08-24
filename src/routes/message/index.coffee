@@ -9,7 +9,6 @@ app.post '/respondToSms', (req, res) ->
   incomingMessageTo = req.body.To
 
   wit string: incomingMessage, (err, data) ->
-
     selectModule data, (err, data) ->
 
       console.log data
