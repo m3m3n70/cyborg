@@ -13,4 +13,9 @@ module.exports = (opts, cb) ->
     .query language: 'EN-us'
     .query mode: 'driving'
     .end (err, res) ->
-      return cb err, res.body.rows[0].elements
+      #return cb err, res.body.rows[0]
+      result = res.body.rows[0].elements[0]
+      if result.distance?.text?
+        return cb err, result.distance.text
+      else
+        return cb err, 'sorry i got nothing'

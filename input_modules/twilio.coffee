@@ -3,11 +3,13 @@ twilio = require 'twilio'
 
 client = new twilio.RestClient config.twilioAccountSid, config.twilioAuthToken
 
-messageData =
-  to: '4153172907'
-  from: '2517324988'
-  body: 'testing'
+module.exports = (messageData, cb) ->
+  return cb 'invalid string' unless opts?.to?
 
-client.sms.messages.create messageData, (err, data) ->
-  console.log err unless data
-  console.log data
+  sendSms = (messageData, cb) ->
+    return cb if err?
+
+    client.sms.messages.create messageData, (err, data) ->
+      cb err, data
+      console.log err unless data
+      console.log 'Message sent: ' + data.body
